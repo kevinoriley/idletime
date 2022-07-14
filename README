@@ -35,7 +35,7 @@ Run monitor.ps1 as a monitor at an interval of your choosing:
 - Choose your targets
 - Save and Deploy
 
-task.ps1 - creates a scheduled task that runs every 5 minutes. Task runs in the logged on user's context and runs idlecheck.ps1 to check idle status. Outputs timespan to output.txt. psrun.vbs is needed to keep the Powershell window completely invisible to the user.
+task.ps1 - creates (and/or deletes/recreates) a scheduled task that runs every 5 minutes. Task runs in the logged on user's context and runs idlecheck.ps1 to check idle status. Outputs timespan to output.txt. psrun.vbs is needed to keep the Powershell window completely invisible to the user.
 
 monitor.ps1 - updates the IdleTime UDF with 1 of 3 values:
   1. Logged Off - if explorer.exe is not running
