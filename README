@@ -8,6 +8,13 @@ Script: Powershell
 Paste task.ps1 into the body
 Select sites
 Attach idlecheck.ps1 and psrun.vbs to the script
+Automation -> Jobs
+Create Job
+Add the IdleTime task script
+Choose your targets
+Choose your schedule (daily works well)
+Always set an expiration (1 hour works well)
+Run as system account
 
 Run monitor.ps1 as a monitor at an interval of your choosing
 Automation -> Components -> Create Component
