@@ -42,4 +42,5 @@ namespace PInvoke.Win32 {
 }
 '@
 
-("" + [PInvoke.Win32.UserInput]::IdleTime) | Out-File c:\Users\Public\output.txt
+$folder = "C:\Users\Public\PublicScripts"
+("" + [PInvoke.Win32.UserInput]::IdleTime) | Out-File "$folder\output.txt"
