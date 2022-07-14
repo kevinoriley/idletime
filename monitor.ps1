@@ -3,6 +3,7 @@ $Customfield = "Custom"+$ENV:UDFNumber
 $folder = "C:\Users\Public\PublicScripts"
 
 # Check whether anyone is logged on
+$explorerprocesses = @(Get-WmiObject -Query "Select * FROM Win32_Process WHERE Name='explorer.exe'" -ErrorAction SilentlyContinue)
 If ($explorerprocesses.Count -eq 0)
 {
 	# Set UDF if no one is logged on
