@@ -1,8 +1,0 @@
-Daily + initial audit script:
-Check to see if scheduled task exists
-If not, download files and create scheduled task
-
-Monitor:
-Check to see if logged off, update UDF
-Get data from output file
-Update idle time UDF
