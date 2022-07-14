@@ -7,7 +7,7 @@ $explorerprocesses = @(Get-WmiObject -Query "Select * FROM Win32_Process WHERE N
 If ($explorerprocesses.Count -eq 0)
 {
 	# Set UDF if no one is logged on
-	New-ItemProperty "HKLM:\SOFTWARE\CentraStage" -Name $Customfield -PropertyType string -value ("Logged off ("+(Get-Date -format "MM/dd/yyyy HH:mm")+")") -Force
+	New-ItemProperty "HKLM:\SOFTWARE\CentraStage" -Name $Customfield -PropertyType string -value "Logged off" -Force
 }
 
 # If someone is logged on...
@@ -20,11 +20,11 @@ Else
 	# Set UDF based on whether idle time is over or under 5 minutes
 	If ($idleTime -le [timespan]"00:00:05:00")
 	{
-		New-ItemProperty "HKLM:\SOFTWARE\CentraStage" -Name $Customfield -PropertyType string -value ("Active ("+(Get-Date -format "MM/dd/yyyy HH:mm")+")") -Force
+		New-ItemProperty "HKLM:\SOFTWARE\CentraStage" -Name $Customfield -PropertyType string -value "Active" -Force
 	}
 	Else
 	{
-		New-ItemProperty "HKLM:\SOFTWARE\CentraStage" -Name $Customfield -PropertyType string -value ("Idle ("+(Get-Date -format "MM/dd/yyyy HH:mm")+")") -Force
+		New-ItemProperty "HKLM:\SOFTWARE\CentraStage" -Name $Customfield -PropertyType string -value "Idle" -Force
 	}
 }
 
