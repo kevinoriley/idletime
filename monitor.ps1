@@ -1,5 +1,5 @@
-# Set Datto UDF field number (remove # after testing)
-$Customfield = "Custom"#+$ENV:UDFNumber
+# Set variables
+$Customfield = "Custom"+$ENV:UDFNumber
 $folder = "C:\Users\Public\PublicScripts"
 
 # Check whether anyone is logged on
