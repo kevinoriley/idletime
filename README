@@ -1,0 +1,4 @@
+Intended for Datto RMM
+
+Run task.ps1 daily as a script
+Run monitor.ps1 as a monitor at an interval of your choosing
