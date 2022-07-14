@@ -44,4 +44,6 @@ monitor.ps1 - updates the IdleTime UDF with 1 of 3 values:
 
 If you're having trouble saving the script, monitor, or monitoring policy, try removing all comment lines (#) from the components. For some reason Datto doesn't interpret them very well...
 
+End result:
+
 ![plot](https://github.com/kevinoriley/idletime/blob/main/idletime.png)
