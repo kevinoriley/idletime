@@ -29,8 +29,8 @@ Create Policy
 Name: Whatever you'd like
 Set your scope
 Add the IdleTime component monitor and configure it to run at whatever interval you'd like
-  5 minutes seems fine, although it only updates every 10-15 minutes realistically.
-  Raise an alert" doesn't matter since the monitor always returns 0 (success)
+  -5 minutes seems fine, although it only updates every 10-15 minutes realistically.
+  -"Raise an alert" doesn't matter since the monitor always returns 0 (success)
 Choose your targets
 Save and Deploy
 
