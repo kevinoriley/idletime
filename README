@@ -1,14 +1,33 @@
 Intended for Datto RMM
 
 Run task.ps1 daily as a script
-Attach idlecheck.ps1 and psrun.vbs files to that script.
+Automation -> Components -> Create Component
+Name: Whatever you'd like
+Category: Scripts
+Script: Powershell
+Paste task.ps1 into the body
+Select sites
+Attach idlecheck.ps1 and psrun.vbs to the script
 
 Run monitor.ps1 as a monitor at an interval of your choosing
+Automation -> Components -> Create Component
+Name: Whatever you'd like
+Category: Monitors
+Script: Powershell
+Paste monitor.ps1 into the body
+Select sites
+Add a variable named UDFNumber with type STRING. Set the value to whatever UDF you'd like to populate (Setup -> Global Settings to see all UDFs).
 
-Include a custom variable on the monitor:
-UDFNumber	STRING	20
-Feel free to change the UDFNumber value, as needed. Set the UDF globally first.
+Policies -> Monitoring
+Create Policy
+Name: Whatever you'd like
+Set your scope
+Add the IdleTime component monitor and configure it to run at whatever interval you'd like (5 minutes seems good)
+Choose your targets
+Save and Deploy
 
 task.ps1 - creates a scheduled task that runs every 5 minutes. Task jumps into the user's context and runs idlecheck.ps1 to check idle status. Outputs timespan to output.txt. psrun.vbs is needed to keep the Powershell window completely invisible to the user.
 
 monitor.ps1 - updates the IdleTime UDF with 1 of 3 values - Logged Off, Active, or Idle - based on the existence of explorer.exe and the contents of output.txt.
+
+If you're having trouble saving the script or the monitor or the monitoring policy, try removing all #COMMENTS. For some reason Datto doesn't interpret them very well...
