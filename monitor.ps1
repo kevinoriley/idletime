@@ -12,7 +12,7 @@ If ($explorerprocesses.Count -eq 0)
 # If someone is logged on...
 Else
 {
-	# Get and format the contents of output.txt (created from scheduled task)
+	# Get and format the contents of output.txt (created from scheduled task - see task.ps1)
 	$idleTimeString = Get-Content $folder\output.txt
 	$idleTime = $idleTimeString -as [timespan]
 	
