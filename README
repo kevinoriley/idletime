@@ -7,7 +7,8 @@ Run monitor.ps1 as a monitor at an interval of your choosing
 
 Include a custom variable on the monitor:
 UDFNumber	STRING	20
-monitor.ps1 script also sets the UDFNumber variable to 20, but feel free to change this, as needed.
+Feel free to change the UDFNumber value, as needed. Set the UDF globally first.
 
 task.ps1 - creates a scheduled task that runs every 5 minutes. Task jumps into the user's context and runs idlecheck.ps1 to check idle status. Outputs timespan to output.txt. psrun.vbs is needed to keep the Powershell window completely invisible to the user.
+
 monitor.ps1 - updates the IdleTime UDF with 1 of 3 values - Logged Off, Active, or Idle - based on the existence of explorer.exe and the contents of output.txt.
